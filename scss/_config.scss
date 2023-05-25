@@ -1,0 +1,70 @@
+$light-primary-color: #F8F6F4;
+$light-secondary-color: #C4DFDF;
+$light-tertiary-color: #D2E9E9;
+$light-quaternary-color: #E3F4F4;
+
+$dark-primary-color: #6B728E;
+$dark-secondary-color: #404258;
+$dark-tertiary-color: #474E68;
+$dark-quaternary-color: #50577A;
+
+
+@mixin easeOut {
+    transition: all 0.5s ease-out;
+}
+
+@mixin colorFadePointer {
+    cursor: pointer;
+    @include easeOut;
+    &:hover{
+        color: $light-primary-color;
+    }
+}
+
+@mixin themedFadePointer($theme){
+    @if $theme == "light" {
+        cursor: pointer;
+        @include easeOut;
+        &:hover{
+            color: #fff;
+        }
+    } @else {
+        cursor: pointer;
+        @include easeOut;
+        &:hover{
+            color: #000;
+        }
+    }
+}
+
+//set text color. "source: course tutorial
+@function set-text-color($color) {
+    @if (lightness($color) > 40){
+        @return #000;
+    }@else{
+        @return #fff;
+    }
+}
+
+@function lightColorTheme($number){
+    @if $number == 1 {
+        @return $light-primary-color;
+    } @else if $number == 2 {
+        @return $light-secondary-color;
+    } @else if $number == 3 {
+        @return $light-tertiary-color;
+    } @else if $number == 4 {
+        @return $light-quaternary-color;
+    }
+}
+@function darkColorTheme($number){
+    @if $number == 1 {
+        @return $dark-primary-color;
+    } @else if $number == 2 {
+        @return $dark-secondary-color;
+    } @else if $number == 3 {
+        @return $dark-tertiary-color;
+    } @else if $number == 4 {
+        @return $dark-quaternary-color;
+    }
+}

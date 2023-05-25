@@ -1,0 +1,36 @@
+
+.menu-btn {
+    
+    position: absolute;
+    z-index: 3;
+    left: 20px;
+    top: 20px;
+    cursor: pointer;
+    @include easeOut;
+
+}
+
+.menu {
+    visibility: hidden;
+    &.show{
+        visibility: visible;
+    }
+
+    
+
+    .mens-btn, .womens-btn{
+        cursor: pointer;
+    }
+
+    .men-nav-item, .women-nav-item{
+        visibility: hidden;
+        height: 0;
+        
+
+        &.show{
+            visibility: visible;
+            height: auto;
+            
+        }
+    }
+}
