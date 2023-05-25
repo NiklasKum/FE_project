@@ -12,8 +12,53 @@
 
 .menu {
     visibility: hidden;
+    top: 0;
+    margin: 5px 0 0 0;
+    width: 100%;
+    opacity: 0.9;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: left;
+    justify-content: left;
+    float: left;
+    width: 30%;
+    //crude solution: 100view port height minus 3.5rem (header height) - 5px (the padding height)
+    height: calc(100vh - 3.5rem - 5px);
+    overflow: hidden;
+    background: lightColorTheme(4);
+    transform: translate3d(-100%,0,0);
+    @include easeOut;
+
+    &.dark-mode{
+        background: darkColorTheme(4);
+        .nav-item{
+            
+            @include themedFadePointerBg("dark", lightColorTheme(3), darkColorTheme(3));
+            color: lightColorTheme(1);
+            box-shadow: -5px 5px darkColorTheme(3);
+            a{
+                color: set-text-color(darkColorTheme(4))
+            }
+            
+            .mens-btn, .womens-btn{
+                i{
+                    color: set-text-color(darkColorTheme(4));
+                }
+            }
+            .sublist-men, .sublist-women {
+                a{
+                    @include themedFadePointer("dark");
+                }
+            }
+            &.current{
+                background: darkColorTheme(3);
+            }
+        }
+    }
+
     &.show{
         visibility: visible;
+        transform: translate3d(1%,0,0);
     }
 
     
@@ -22,14 +67,48 @@
         cursor: pointer;
     }
 
+    
+
     .men-nav-item, .women-nav-item{
         visibility: hidden;
         height: 0;
+        text-decoration: none;
+        list-style: none;
         
 
         &.show{
             visibility: visible;
             height: auto;
+            
+        }
+    }
+
+    .nav-item{
+        //change font size on smaller screens
+        padding: 10px;
+        margin-top: 5px;
+        box-shadow: -5px 5px lightColorTheme(3);
+        width: 100%;
+        list-style: none;
+        font-size: 25px;
+        font-style: bold;
+        
+        
+        @include themedFadePointerBg("light", lightColorTheme(3), darkColorTheme(3));
+        a{
+            text-decoration: none;
+            color: set-text-color(lightColorTheme(4));
+            
+            
+        }
+
+        .sublist-men, .sublist-women {
+            a{
+                @include themedFadePointer("light");
+            }
+        }
+        &.current {
+            background: lightColorTheme(3);
             
         }
     }

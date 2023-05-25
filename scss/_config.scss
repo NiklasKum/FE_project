@@ -37,6 +37,22 @@ $dark-quaternary-color: #50577A;
     }
 }
 
+@mixin themedFadePointerBg($theme, $lightcolor, $darkcolor){
+    @if $theme == "light" {
+        cursor: pointer;
+        @include easeOut;
+        &:hover{
+            background: $lightcolor;
+        }
+    } @else {
+        cursor: pointer;
+        @include easeOut;
+        &:hover{
+            background: $darkcolor;
+        }
+    }
+}
+
 //set text color. "source: course tutorial
 @function set-text-color($color) {
     @if (lightness($color) > 40){

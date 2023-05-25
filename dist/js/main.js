@@ -90,6 +90,7 @@ function toggleTheme(){
         cartBtn.classList.add('dark-mode');
         notifBtn.classList.add('dark-mode');
         accoutBtn.classList.add('dark-mode');
+        menu.classList.add('dark-mode');
         darktheme = true;
     } else {
         lightIcon.className="fa-solid fa-eye-slash fa-xl"
@@ -100,6 +101,7 @@ function toggleTheme(){
         cartBtn.classList.remove('dark-mode');
         notifBtn.classList.remove('dark-mode');
         accoutBtn.classList.remove('dark-mode');
+        menu.classList.remove('dark-mode');
         darktheme = false;
     }
 }

@@ -7,17 +7,77 @@
   transition: all 0.5s ease-out; }
 
 .menu {
-  visibility: hidden; }
+  visibility: hidden;
+  top: 0;
+  margin: 5px 0 0 0;
+  width: 100%;
+  opacity: 0.9;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: left;
+  justify-content: left;
+  float: left;
+  width: 30%;
+  height: calc(100vh - 3.5rem - 5px);
+  overflow: hidden;
+  background: #E3F4F4;
+  transform: translate3d(-100%, 0, 0);
+  transition: all 0.5s ease-out; }
+  .menu.dark-mode {
+    background: #50577A; }
+    .menu.dark-mode .nav-item {
+      cursor: pointer;
+      transition: all 0.5s ease-out;
+      color: #F8F6F4;
+      box-shadow: -5px 5px #474E68; }
+      .menu.dark-mode .nav-item:hover {
+        background: #474E68; }
+      .menu.dark-mode .nav-item a {
+        color: #fff; }
+      .menu.dark-mode .nav-item .mens-btn i, .menu.dark-mode .nav-item .womens-btn i {
+        color: #fff; }
+      .menu.dark-mode .nav-item .sublist-men a, .menu.dark-mode .nav-item .sublist-women a {
+        cursor: pointer;
+        transition: all 0.5s ease-out; }
+        .menu.dark-mode .nav-item .sublist-men a:hover, .menu.dark-mode .nav-item .sublist-women a:hover {
+          color: #000; }
+      .menu.dark-mode .nav-item.current {
+        background: #474E68; }
   .menu.show {
-    visibility: visible; }
+    visibility: visible;
+    transform: translate3d(1%, 0, 0); }
   .menu .mens-btn, .menu .womens-btn {
     cursor: pointer; }
   .menu .men-nav-item, .menu .women-nav-item {
     visibility: hidden;
-    height: 0; }
+    height: 0;
+    text-decoration: none;
+    list-style: none; }
     .menu .men-nav-item.show, .menu .women-nav-item.show {
       visibility: visible;
       height: auto; }
+  .menu .nav-item {
+    padding: 10px;
+    margin-top: 5px;
+    box-shadow: -5px 5px #D2E9E9;
+    width: 100%;
+    list-style: none;
+    font-size: 25px;
+    font-style: bold;
+    cursor: pointer;
+    transition: all 0.5s ease-out; }
+    .menu .nav-item:hover {
+      background: #D2E9E9; }
+    .menu .nav-item a {
+      text-decoration: none;
+      color: #000; }
+    .menu .nav-item .sublist-men a, .menu .nav-item .sublist-women a {
+      cursor: pointer;
+      transition: all 0.5s ease-out; }
+      .menu .nav-item .sublist-men a:hover, .menu .nav-item .sublist-women a:hover {
+        color: #fff; }
+    .menu .nav-item.current {
+      background: #D2E9E9; }
 
 body {
   background: #F8F6F4;
@@ -31,9 +91,11 @@ header {
   background: linear-gradient(#C4DFDF, #E3F4F4);
   height: 3.5rem;
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  box-shadow: 0px 5px #D2E9E9; }
   header.dark-mode {
-    background: linear-gradient(#404258, #50577A); }
+    background: linear-gradient(#404258, #50577A);
+    box-shadow: 0px 5px #474E68; }
     header.dark-mode .logo h1 {
       cursor: pointer;
       transition: all 0.5s ease-out;

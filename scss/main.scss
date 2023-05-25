@@ -24,13 +24,16 @@ header{
     height: 3.5rem;
     width: 100%;
     text-align: center;
+    box-shadow: 0px 5px lightColorTheme(3);
 
     &.dark-mode{
         background: linear-gradient(darkColorTheme(2), darkColorTheme(4));
+        box-shadow: 0px 5px darkColorTheme(3);
         .logo{
             h1{
                 @include themedFadePointer("dark");
                 color: lightColorTheme(1);
+                
             }
             
         }
