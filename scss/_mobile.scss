@@ -1,0 +1,64 @@
+// widescreen
+@include mediaXl{
+    .category{
+        .products{
+            grid-template-columns: repeat(4,1fr);
+        }
+    }
+}
+
+// desktop
+@include mediaLg{
+    .category{
+        .products{
+            grid-template-columns: repeat(3,1fr);
+        }
+    }
+    
+}
+
+//tablets
+@include mediaMd {
+    .category{
+        .products{
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+
+    .ptext{
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        color: #000;
+        font-size: 20px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    header{
+        .logo{
+            padding-top: 15px;
+            justify-content: center;
+            align-items: center;
+        h1{
+            margin-top: 0;
+            font-size: 25px;
+            
+             
+            
+        }
+        }
+    }
+    
+
+}
+
+//phone
+@include mediaSm {
+    .category{
+        .products{
+            grid-template-columns: 1fr;
+        }
+    }
+}

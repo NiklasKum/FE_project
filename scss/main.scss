@@ -4,7 +4,7 @@
 
 @import 'config';
 @import 'menu';
-@import 'mobile';
+
 
 body {
     background: lightColorTheme(1);
@@ -44,6 +44,17 @@ body {
                     span{
                         color: #fff;
                     }
+                }
+            }
+        }
+        .products{
+            img {
+                width: 100%;
+                border: 3px darkColorTheme(1) solid;
+                &:hover{
+                    @include easeOut;
+                    border: 3px #000 solid;
+                    
                 }
             }
         }
@@ -294,3 +305,4 @@ header{
 
     
 }
+@import 'mobile';
