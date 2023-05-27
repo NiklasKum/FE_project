@@ -4,16 +4,186 @@
 
 @import 'config';
 @import 'menu';
+@import 'mobile';
 
 body {
     background: lightColorTheme(1);
-    margin: 0px;
+    margin: 0;
     padding: 0px;
+    height: 100%;
+    width: 100%;
+    font-size:16px;
+    font-family: "Lato", sans-serif;
+    line-height: 1.8em;
+    color: #666;
 
+    //darker color theme
     &.dark-mode{
         background: darkColorTheme(1);
+        color: set-text-color(darkColorTheme(2));
+        .section-dark{
+            background-color: darkColorTheme(2);
+            color: #ddd;
+        }
+        .ptext .border{
+            background-color: darkColorTheme(4);
+            color:set-text-color(darkColorTheme(3));
+            padding: 20px;
+        }
+        .ptext .border.trans{
+            background-color: transparent;
+            color:set-text-color(darkColorTheme(3));
+        }
+        .boxes{
+            div{
+                border: 3px darkColorTheme(3) solid;
+                color: lightColorTheme(1);
+                &:hover {
+                    padding: 1rem 1.5rem;
+                    background: darkColorTheme(3);
+                    span{
+                        color: #fff;
+                    }
+                }
+            }
+        }
     }
     
+    
+}
+
+.boxes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+
+    div{
+        font-size: 3rem;
+        border: 3px lightColorTheme(3) solid;
+        
+        padding: 1.5rem 2.5rem;
+        margin-bottom: 3rem;
+        @include easeOut;
+        //background: lightColorTheme(4);
+        &:hover {
+            padding: 1rem 1.5rem;
+            background: lightColorTheme(3);
+            cursor:pointer;
+            span{
+                color: set-text-color(lightColorTheme(3));
+            }
+        }
+    }
+}
+
+//Parallax page style
+.section {
+    text-align: center;
+    padding: 50px 80px;
+}
+
+
+.section-dark{
+    background-color: lightColorTheme(2);
+    color: #666;
+}
+
+.ptext{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.ptext .border{
+    background-color: lightColorTheme(3);
+    color:set-text-color(lightColorTheme(3));
+    padding: 20px;
+}
+
+.ptext .border.trans{
+    background-color: transparent;
+    color:set-text-color(darkColorTheme(3));
+}
+
+.pimg1, .pimg2, .pimg3{
+    position: relative;
+    opacity: 0.70;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+    z-index: -1;
+
+}
+
+.pimg1{
+    background-image:url('../img/img5.jpg');
+    min-height: 100vh;
+}
+.pimg2{
+    background-image:url('../img/img6.jpg');
+    min-height: 400px;
+}
+.pimg3{
+    background-image:url('../img/img7.jpg');
+    min-height: 400px;
+}
+
+//Category page
+
+.category{
+    
+    
+    
+    .title-img{
+        position: relative;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+        background-image: url('../img/img2.jpg');
+        min-height: 300px;
+        z-index: -1;
+    }
+    
+
+    .products{
+        display: grid;
+        grid-gap: 25px;
+        grid-template-columns: repeat(4,1fr);
+
+        img {
+            width: 100%;
+            border: 3px #fff solid;
+            &:hover{
+                @include easeOut;
+                border: 3px lightColorTheme(2) solid;
+                
+            }
+        }
+        .item{
+            line-height: 0px;
+            
+            
+            
+        }
+    
+        .item-title, .item-brand, .item-price{
+            margin-left: 5px;
+            
+        }
+
+        
+    }
 }
 
 
@@ -25,6 +195,8 @@ header{
     width: 100%;
     text-align: center;
     box-shadow: 0px 5px lightColorTheme(3);
+    color: set-text-color(lightColorTheme(2));
+    line-height: normal;
 
     &.dark-mode{
         background: linear-gradient(darkColorTheme(2), darkColorTheme(4));
@@ -108,14 +280,17 @@ header{
     }
     
     .logo{
+        justify-content: center;
+        align-items: center;
         h1{
             margin-top: 0;
             font-size: 45px;
-            margin-left: 45%;
-            margin-right: 45%;
+            
             @include themedFadePointer("light");
             
         }
         
     }
+
+    
 }

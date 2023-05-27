@@ -1,3 +1,8 @@
+/*sources
+course videos 1-5
+https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
+*/
+
 
 //menu works
 const menuBtn = document.querySelector('.menu-btn');
@@ -38,6 +43,7 @@ function toggleMenu(){
     if(!showmenu){
         menuBtn.classList.add('close');
         menuIcon.className ="fa-solid fa-x fa-2xl";
+ 
         menu.classList.add('show');
         menuLinks.forEach(item => item.classList.add('show'));
 
@@ -104,5 +110,16 @@ function toggleTheme(){
         menu.classList.remove('dark-mode');
         darktheme = false;
     }
+}
+
+let prevScrollpos = window.scrollY;
+window.onscroll = function() {
+    let currentScrollpos = window.scrollY;
+    if(prevScrollpos+20 < currentScrollpos){
+        if(showmenu){
+            toggleMenu();
+        }
+    }
+    prevScrollpos = currentScrollpos;
 }
 
